@@ -33,7 +33,9 @@ class Student extends Person {
         this.favSubjects = studAttr.favSubjects
     }
     listsSubjects(){
-        return favSubjects;
+        this.favSubjects.forEach(function(curVal){
+            console.log(curVal);
+        });
     }
     PRAssignment(subject){
         return `${this.name} has submitted a PR for ${subject}`;
@@ -133,7 +135,7 @@ const Oli = new Student({
 });
 
 // PM Objects
-const King Kai = new ProjectManager({
+const KingKai = new ProjectManager({
     name: 'King Kai',
     age: '125',
     location: 'his own planet',
@@ -144,6 +146,16 @@ const King Kai = new ProjectManager({
     favInstructor: 'Goku'
 });
 
+const Mufasa = new ProjectManager({
+    name: 'Mufasa',
+    age: '40',
+    location: 'Pride Rock',
+    specialty: 'instilling words of wisdom',
+    favLanguage: 'Python',
+    catchPhrase: "Roarrr!!!",
+    gradClassName: 'Web26',
+    favInstructor: 'Piccolo'
+});
 
 
 // Console logs to run tests
@@ -151,4 +163,7 @@ console.log(Mulan.speak());
 console.log(Goku.demo('physics'));
 console.log(Piccolo.grade(Gohan, 'math'));
 console.log(Michelle.PRAssignment('JSII'));
+Gohan.listsSubjects();
 console.log(Oli.sprintChallenge('CSS'));
+console.log(Mufasa.standUp('Web26'));
+console.log(KingKai.debugsCode(Michelle, 'JavaScript'));
